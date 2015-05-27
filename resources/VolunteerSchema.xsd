@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://xml.netbeans.org/schema/TestTwoDetaliedSchema"
+    xmlns:tns="http://xml.netbeans.org/schema/TestTwoDetaliedSchema"
+    elementFormDefault="qualified">
+    <xsd:element name="Volunteers">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Volunteer" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="FirstName"/>
+                            <xsd:element name="LastName"/>
+                            <xsd:element name="Address"/>
+                            <xsd:element name="Zip"/>
+                            <xsd:element name="City"/>
+                            <xsd:element name="Phone"/>
+                            <xsd:element name="Email"/>
+                            <xsd:element name="Birthday"/>
+                            <xsd:element name="About"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="id" type="xsd:string"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

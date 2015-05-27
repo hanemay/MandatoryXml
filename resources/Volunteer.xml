@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : VolunteerSchema.xml
+    Created on : May 23, 2015, 12:18 PM
+    Author     : Andrei
+    Description:
+        Purpose of the document follows.
+-->
+
+<Volunteers  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+                 xmlns:ns0='http://xml.netbeans.org/schema/TestTwoDetaliedSchema'
+                 xsi:schemaLocation='http://xml.netbeans.org/schema/TestTwoDetaliedSchema VolunteerSchema.xsd'>
+    <Volunteer id="0">
+        <FirstName>Andrei</FirstName>
+        <LastName>Pirvan</LastName>
+        <Address>Dalslandsgadeh</Address>
+        <Zip>2300</Zip>
+        <City>Copenhagen</City>
+        <Phone>60 81 59 36</Phone>
+        <Email>pirvanandrei@ymail.com</Email>
+        <Birthday>12/08/93</Birthday>
+        <About><![CDATA[ Loremipsum dasl ;alkd;lak dsa dsad;l akdsla ]]></About>
+    </Volunteer>
+    
+   <Volunteer id="1">
+        <FirstName>Andrei</FirstName>
+        <LastName>Pirvan</LastName>
+        <Address>Dalslandsgade h</Address>
+        <Zip>2300</Zip>
+        <City>Copenhagen</City>
+        <Phone>60 81 59 36</Phone>
+        <Email>pirvanandrei@ymail.com</Email>
+        <Birthday>12/08/93</Birthday>
+        <About><![CDATA[ Loremipsum dasl ;alkd;lak dsa dsad;l akdsla ]]></About>
+    </Volunteer>
+    
+    <Volunteer id="2">
+        <FirstName>Elena</FirstName>
+        <LastName>Pirvan</LastName>
+        <Address>Dalslandsgadeh</Address>
+        <Zip>2300</Zip>
+        <City>Copenhagen</City>
+        <Phone>60815936</Phone>
+        <Email>pirvanelena@ymail.com</Email>
+        <Birthday>12/08/93</Birthday>
+        <About><![CDATA[ Loremipsum dasl ;alkd;lak dsa dsad;l akdsla ]]></About>
+    </Volunteer>
+    
+    <Volunteer id="3">
+        <FirstName>Maria</FirstName>
+        <LastName>Pirvan</LastName>
+        <Address>Dalslandsgadeh</Address>
+        <Zip>2300</Zip>
+        <City>Copenhagen</City>
+        <Phone>60815936</Phone>
+        <Email>pirvanmaria@ymail.com</Email>
+        <Birthday>12/08/93</Birthday>
+        <About><![CDATA[ Loremipsum dasl ;alkd;lak dsa dsad;l akdsla ]]></About>
+    </Volunteer>
+</Volunteers>

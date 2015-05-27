@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : VolunteerSchema.xml
+    Created on : May 23, 2015, 8:20 PM
+    Author     : Andrei
+    Description:
+        Purpose of the document follows.
+-->
+
+<ns0:Volunteers  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+                 xmlns:ns0='http://xml.netbeans.org/schema/TestTwoDetaliedSchema'
+                 xsi:schemaLocation='http://xml.netbeans.org/schema/TestTwoDetaliedSchema VolunteerSchema.xsd'>
+    <ns0:Volunteer id="1">
+        <ns0:FirstName>Andrei</ns0:FirstName>
+        <ns0:LastName>Pirvan</ns0:LastName>
+        <ns0:Address>Dalslandsgadeh</ns0:Address>
+        <ns0:Zip>2300</ns0:Zip>
+        <ns0:City>Copenhagen</ns0:City>
+        <ns0:Phone>60 81 59 36</ns0:Phone>
+        <ns0:Email>pirvanandrei@ymail.com</ns0:Email>
+        <ns0:Birthday>12/08/93</ns0:Birthday>
+        <ns0:About><![CDATA[ Loremipsum dasl ;alkd;lak dsa dsad;l akdsla ]]></ns0:About>
+    </ns0:Volunteer>
+    
+    <ns0:Volunteer id="2">
+        <ns0:FirstName>Andrei</ns0:FirstName>
+        <ns0:LastName>Pirvan</ns0:LastName>
+        <ns0:Address>Dalslandsgadeh</ns0:Address>
+        <ns0:Zip>2300</ns0:Zip>
+        <ns0:City>Copenhagen</ns0:City>
+        <ns0:Phone>60 81 59 36</ns0:Phone>
+        <ns0:Email>pirvanandrei@ymail.com</ns0:Email>
+        <ns0:Birthday>12/08/93</ns0:Birthday>
+        <ns0:About><![CDATA[ Loremipsum dasl ;alkd;lak dsa dsad;l akdsla ]]></ns0:About>
+    </ns0:Volunteer>
+    
+    <ns0:Volunteer id="3">
+        <ns0:FirstName>Andrei</ns0:FirstName>
+        <ns0:LastName>Pirvan</ns0:LastName>
+        <ns0:Address>Dalslandsgadeh</ns0:Address>
+        <ns0:Zip>2300</ns0:Zip>
+        <ns0:City>Copenhagen</ns0:City>
+        <ns0:Phone>60 81 59 36</ns0:Phone>
+        <ns0:Email>pirvanandrei@ymail.com</ns0:Email>
+        <ns0:Birthday>12/08/93</ns0:Birthday>
+        <ns0:About><![CDATA[ Loremipsum dasl ;alkd;lak dsa dsad;l akdsla ]]></ns0:About>
+    </ns0:Volunteer>
+    
+    <ns0:Volunteer id="4">
+        <ns0:FirstName>Andrei</ns0:FirstName>
+        <ns0:LastName>Pirvan</ns0:LastName>
+        <ns0:Address>Dalslandsgadeh</ns0:Address>
+        <ns0:Zip>2300</ns0:Zip>
+        <ns0:City>Copenhagen</ns0:City>
+        <ns0:Phone>60 81 59 36</ns0:Phone>
+        <ns0:Email>pirvanandrei@ymail.com</ns0:Email>
+        <ns0:Birthday>12/08/93</ns0:Birthday>
+        <ns0:About><![CDATA[ Loremipsum dasl ;alkd;lak dsa dsad;l akdsla ]]></ns0:About>
+    </ns0:Volunteer>
+
+</ns0:Volunteers>
