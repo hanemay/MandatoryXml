@@ -31,9 +31,11 @@ public class FileManager {
         String xsdName = RemoveFileExtension(FileName);
         XSDLocation = currentDir + xsdName + "xsd"; 
     }
+    //returns xsd location
     public String getXsdLocation(){
         return XSDLocation;
     }
+    //return a string with 3 letters removed a quick way to change from .xsd to .xml or the other way arround
     public String RemoveFileExtension(String str) {
         str = str.substring(0, str.length() - 3);
         return str;
