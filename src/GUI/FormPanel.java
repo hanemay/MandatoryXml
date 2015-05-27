@@ -23,8 +23,6 @@ import javax.swing.border.Border;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
-
-
 public class FormPanel  extends JPanel implements ActionListener{
         private final GUI.NewGUI userInterface;
 	// define the elements
@@ -114,19 +112,23 @@ public class FormPanel  extends JPanel implements ActionListener{
         //@override actionperformed this is where our buttons gets called
         @Override
 	public void actionPerformed(ActionEvent evt) {
+            //instantiated object for easy object comparison
             Object src = evt.getSource();
             // increase the counter value
                // Display the counter value on the TextField tfCount
             System.out.println(evt.toString());
+            //button for getting a xml file, location is stored in XMLLocation string and xsd is in XSDLocation
             if (src == btnGetXML) {
                 FileManager fm = new FileManager();
                 XMLLocation = fm.getXmlLocation();
                 XSDLocation = fm.getXsdLocation();
             }
+            //button for activating xsd xml validation
             if (src == btnDomValidate) {
                  XmlDom validate = new XmlDom();
                  System.out.println(validate.XMLValidate(XMLLocation, XSDLocation));
             }
+            //button for activating xml parsing
             if(src == okBtn){
                 FileManager fm = new FileManager();
                 XMLLocation = fm.getXmlLocation();

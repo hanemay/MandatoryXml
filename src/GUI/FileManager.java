@@ -27,8 +27,7 @@ public class FileManager {
         FileName = xmlFile.getFile();
         currentDir = xmlFile.getDirectory();
         XMLLocation = currentDir + FileName;
-        System.out.println(FileName);
-        
+        System.out.println(FileName);   
         String xsdName = RemoveFileExtension(FileName);
         XSDLocation = currentDir + xsdName + "xsd"; 
     }
