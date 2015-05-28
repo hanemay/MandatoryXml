@@ -1,4 +1,5 @@
 package gui;
+import gui.NewGUI;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +16,7 @@ public class App {
 			public void run(){
                             try {
                                 ///GUI.NewGUI();
-                                new GUI.NewGUI();
+                                NewGUI newGUI = new gui.NewGUI();
                             } catch (SAXException ex) {
                                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
                             } catch (IOException ex) {

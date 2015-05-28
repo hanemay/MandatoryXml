@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package gui;
 
-import Volunteers.Volunteer;
-import Volunteers.XMLSAXVolunteerHandler;
+import volunteers.Volunteer;
+import volunteers.XMLSAXVolunteerHandler;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.io.IOException;

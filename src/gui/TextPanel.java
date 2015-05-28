@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GUI;
+package gui;
 
 import static com.sun.javafx.fxml.expression.Expression.add;
 import java.awt.BorderLayout;
