@@ -6,21 +6,31 @@
 package GUI;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.StringWriter;
 import javax.xml.XMLConstants;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 /**
  *
  * @author hanemay
  */
 public class XmlDom {
-    
+    String returnText;
     public XmlDom(){
        
     }
@@ -38,11 +48,23 @@ public class XmlDom {
                 Document doc = builder.parse(myxmlfile);
                 DOMSource source = new DOMSource(doc);
                 Validator validator = schema.newValidator();
-                validator.validate(source);
+                validator.validate(source);                
             } catch (Exception e) {
                 e.printStackTrace();
                 return "Ups.... Something went wrong :-(";          
             }
             return "The Files " + xmlFile + " " + xsdFile + " ran through succesfully";
+    }
+    public String printDom(String xmlFile) throws SAXException, IOException, ParserConfigurationException, TransformerException{
+        System.out.println(xmlFile);
+        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder Parser = builderFactory.newDocumentBuilder();
+        Transformer transformer = TransformerFactory.newInstance().newTransformer();
+        Document doc = Parser.parse(new InputSource(xmlFile));
+        Source source = new DOMSource(doc);
+        StringWriter writer = new StringWriter();
+        StreamResult result = new StreamResult(writer);
+        transformer.transform(source, result); 
+        return writer.toString();
     }
 }

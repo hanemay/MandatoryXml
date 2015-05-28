@@ -21,6 +21,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import org.xml.sax.SAXException;
 
 public class FormPanel  extends JPanel implements ActionListener{
@@ -127,6 +128,11 @@ public class FormPanel  extends JPanel implements ActionListener{
             if (src == btnDomValidate) {
                  XmlDom validate = new XmlDom();
                 userInterface.setText(validate.XMLValidate(XMLLocation, XSDLocation));
+                try {
+                    userInterface.setText(validate.printDom(XMLLocation));
+                } catch (SAXException | IOException | ParserConfigurationException | TransformerException ex) {
+                    Logger.getLogger(FormPanel.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             //button for activating xml parsing
             if(src == okBtn){
