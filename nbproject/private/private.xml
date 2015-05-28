@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Andrei/Documents/NetBeansProjects/Testing/src/GUI/FormPanel.java</file>
-            <file>file:/C:/Users/Andrei/Documents/NetBeansProjects/Testing/src/GUI/NewGUI.java</file>
-            <file>file:/C:/Users/Andrei/Documents/NetBeansProjects/Testing/src/GUI/App.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/GUI/NewGUI.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/Volunteers/XMLSAXVolunteerHandler.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/GUI/FormPanel.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/GUI/TextPanel.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/GUI/App.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/DOM/DOMCreator.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/GUI/FileManager.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/GUI/XmlDom.java</file>
+            <file>file:/C:/Users/hanemay/Documents/NetBeansProjects/MandatoryXml/src/DOM/CreateXMLWithDOM.java</file>
         </group>
     </open-files>
 </project-private>

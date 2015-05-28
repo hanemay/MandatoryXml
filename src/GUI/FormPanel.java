@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
+import javax.xml.xpath.XPathExpressionException;
 import org.xml.sax.SAXException;
 
 public class FormPanel  extends JPanel implements ActionListener{
@@ -46,6 +47,9 @@ public class FormPanel  extends JPanel implements ActionListener{
 	private JRadioButton femaleRadio;
 	private ButtonGroup genderGroup;
         private String filename;
+        private final JButton btnSearch;
+        private final JLabel lblSearch;
+        private final JTextField searchString;
 
 	public FormPanel(GUI.NewGUI userInterface) throws SAXException, IOException, ParserConfigurationException {
             // configure the form panel dimension
@@ -57,6 +61,7 @@ public class FormPanel  extends JPanel implements ActionListener{
 
             // initiate the variables
             nameLabel = new JLabel("File Name: ");
+            lblSearch = new JLabel("Search");
             occupationLabel = new JLabel("Occupation: ");
             nameField = new JTextField(15);
             occupationField = new JTextField(5);
@@ -69,6 +74,8 @@ public class FormPanel  extends JPanel implements ActionListener{
             btnDomValidate = new JButton("Validate XML");
             okBtn = new JButton("OK");
             okBtn.setActionCommand("ok");
+            btnSearch = new JButton("Search");
+            searchString = new JTextField(20);
             Border innerBorder = BorderFactory.createTitledBorder("Add XML");
             Border outerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
             setBorder(BorderFactory.createCompoundBorder(outerBorder, innerBorder));
@@ -109,6 +116,11 @@ public class FormPanel  extends JPanel implements ActionListener{
             btnGetXML.addActionListener(this);
             add(btnDomValidate); 
             btnDomValidate.addActionListener(this);
+            add(lblSearch);
+            add(searchString);
+            add(btnSearch);
+            btnSearch.addActionListener(this);
+            
         }
         //@override actionperformed this is where our buttons gets called
         @Override
@@ -129,7 +141,7 @@ public class FormPanel  extends JPanel implements ActionListener{
                  XmlDom validate = new XmlDom();
                 userInterface.setText(validate.XMLValidate(XMLLocation, XSDLocation));
                 try {
-                    userInterface.setText(validate.printDom(XMLLocation));
+                    userInterface.setText(validate.PrintDom(XMLLocation));
                 } catch (SAXException | IOException | ParserConfigurationException | TransformerException ex) {
                     Logger.getLogger(FormPanel.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -141,6 +153,16 @@ public class FormPanel  extends JPanel implements ActionListener{
                 try {
                     userInterface.XMLtoOBJ(XMLLocation);
                 } catch (SAXException | IOException | ParserConfigurationException ex) {
+                    Logger.getLogger(FormPanel.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            if(src == btnSearch){
+                FileManager fm = new FileManager();
+                XMLLocation = fm.getXmlLocation();
+                XmlDom validate = new XmlDom();
+                try {
+                    userInterface.setText(validate.SearchDomFile(XMLLocation, searchString.getText()));
+                } catch (SAXException | IOException | ParserConfigurationException | TransformerException | XPathExpressionException ex) {
                     Logger.getLogger(FormPanel.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }

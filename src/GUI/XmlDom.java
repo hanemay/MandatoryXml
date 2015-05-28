@@ -6,6 +6,7 @@
 package GUI;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 import javax.xml.XMLConstants;
@@ -21,7 +22,12 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -55,8 +61,7 @@ public class XmlDom {
             }
             return "The Files " + xmlFile + " " + xsdFile + " ran through succesfully";
     }
-    public String printDom(String xmlFile) throws SAXException, IOException, ParserConfigurationException, TransformerException{
-        System.out.println(xmlFile);
+    public String PrintDom(String xmlFile) throws SAXException, IOException, ParserConfigurationException, TransformerException{
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder Parser = builderFactory.newDocumentBuilder();
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -66,5 +71,21 @@ public class XmlDom {
         StreamResult result = new StreamResult(writer);
         transformer.transform(source, result); 
         return writer.toString();
+    }
+    public String SearchDomFile(String xmlFile, String searchString)throws SAXException, IOException, ParserConfigurationException, TransformerException, XPathExpressionException{
+        String results = "";
+        System.out.println(searchString);
+        FileInputStream file = new FileInputStream(new File(xmlFile));                 
+        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();             
+        DocumentBuilder builder =  builderFactory.newDocumentBuilder();             
+        Document xmlDocument = builder.parse(file); 
+        XPath xPath =  XPathFactory.newInstance().newXPath();
+        String expression = searchString;
+        System.out.println(expression);
+        NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(xmlDocument, XPathConstants.NODESET);
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            results = nodeList.item(i).getFirstChild().getNodeValue(); 
+        }
+        return results;
     }
 }
