@@ -74,6 +74,10 @@ public class XmlDom {
     }
     public String SearchDomFile(String xmlFile, String searchString)throws SAXException, IOException, ParserConfigurationException, TransformerException, XPathExpressionException{
         String results = "";
+        if(checkForSlash(searchString) == false){
+           // String tempSearchString = searchString;
+            searchString = "/"+searchString;
+        }
         System.out.println(searchString);
         FileInputStream file = new FileInputStream(new File(xmlFile));                 
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();             
@@ -87,5 +91,12 @@ public class XmlDom {
             results = nodeList.item(i).getFirstChild().getNodeValue(); 
         }
         return results;
+    }
+    public boolean checkForSlash(String searchString){
+        if(searchString.substring(0, 0).equals("/")){
+            return true;
+        }else{
+            return false;
+        }       
     }
 }
