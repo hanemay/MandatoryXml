@@ -43,6 +43,6 @@ public class XmlDom {
                 e.printStackTrace();
                 return "Ups.... Something went wrong :-(";          
             }
-            return "SUCCES";
+            return "The Files " + xmlFile + " " + xsdFile + " ran through succesfully";
     }
 }

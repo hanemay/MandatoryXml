@@ -26,40 +26,42 @@ import org.xml.sax.SAXException;
  */
 public class NewGUI extends JFrame{
     
-	private static final long serialVersionUID = 1L;
-	private TextPanel textPanel;
-        private FormPanel formPanel;
-        private JTabbedPane tabPane;
-        private JSplitPane splitPane;
-        
-        
-    
-        public NewGUI() throws SAXException, IOException, ParserConfigurationException{
-            super("Hello World"); // the name of the panel
-             setLayout(new BorderLayout());
-            
-            textPanel = new TextPanel();
-            tabPane = new JTabbedPane();
-            formPanel = new FormPanel(this);
-            
-            tabPane.add("Message", textPanel); 
-            splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, formPanel, tabPane);
-            
-            // add components to the GUI 
-//            add(tabPane, BorderLayout.CENTER);
-            add(splitPane, BorderLayout.CENTER);
-            
-//            String filename = "resources/Volunteer.xml";
-//            XMLtoOBJ(filename);
-           // OBJtoXML(filename, textPanel);
-            
-            // configure the GUI panel
-            setMinimumSize(new Dimension(600, 500));
-            setSize(600, 500);
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            setVisible(true);
-            
-        }
+    private static final long serialVersionUID = 1L;
+    private TextPanel textPanel;
+    private FormPanel formPanel;
+    private JTabbedPane tabPane;
+    private JSplitPane splitPane;
+
+
+
+    public NewGUI() throws SAXException, IOException, ParserConfigurationException{
+        super("Hello World"); // the name of the panel
+        setLayout(new BorderLayout());
+
+        textPanel = new TextPanel();
+        tabPane = new JTabbedPane();
+        formPanel = new FormPanel(this);
+
+        tabPane.add("Message", textPanel); 
+        splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, formPanel, tabPane);
+
+        // add components to the GUI 
+        //            add(tabPane, BorderLayout.CENTER);
+        add(splitPane, BorderLayout.CENTER);
+
+        //            String filename = "resources/Volunteer.xml";
+        //            XMLtoOBJ(filename);
+        // OBJtoXML(filename, textPanel);
+
+        // configure the GUI panel
+        setMinimumSize(new Dimension(600, 500));
+        setSize(600, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+    public void setText(String text){
+        textPanel.addText(text);
+    }
       
 
     public void XMLtoOBJ(String filename) throws SAXException, IOException, ParserConfigurationException {

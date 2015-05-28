@@ -126,7 +126,7 @@ public class FormPanel  extends JPanel implements ActionListener{
             //button for activating xsd xml validation
             if (src == btnDomValidate) {
                  XmlDom validate = new XmlDom();
-                 System.out.println(validate.XMLValidate(XMLLocation, XSDLocation));
+                userInterface.setText(validate.XMLValidate(XMLLocation, XSDLocation));
             }
             //button for activating xml parsing
             if(src == okBtn){
