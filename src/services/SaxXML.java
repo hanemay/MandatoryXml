@@ -12,7 +12,6 @@ import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-import javax.xml.stream.events.StartElement;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -21,7 +20,7 @@ import org.xml.sax.helpers.DefaultHandler;
  *
  * @author Andrei
  */
-public class XMLSAXVolunteerHandler extends DefaultHandler{
+public class SaxXML extends DefaultHandler{
     // One Volunteer
     private Volunteer vol;
       
@@ -65,8 +64,7 @@ public class XMLSAXVolunteerHandler extends DefaultHandler{
                 break;
             case "Volunteer":
                 vol = new Volunteer();
-                String id = attributes.getValue("id");
-                System.out.println("este ceva aicssssssssssssssssi  " + id);
+                String id = attributes.getValue("id"); 
                 vol.setId(Integer.parseInt(id)); 
                 volList.add(vol);  
                 break;

@@ -33,4 +33,5 @@ class TextPanel extends JPanel {
         public void addText(String text){
             textArea.setText(text);
         }
+        
 }

@@ -17,13 +17,9 @@ public class App {
                             try {
                                 ///GUI.ManinPanel();
                                 ManinPanel newGUI = new gui.ManinPanel();
-                            } catch (SAXException ex) {
+                            } catch (SAXException | IOException | ParserConfigurationException ex) {
                                 Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-                            } catch (IOException ex) {
-                                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-                            } catch (ParserConfigurationException ex) {
-                                Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
-                            } 
+                            }
 			}
 		}); 
 	}

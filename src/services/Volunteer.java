@@ -147,14 +147,14 @@ public class Volunteer {
     @Override
     public String toString() {
         return "Vontuneer ID: =" + this.id
-                + "\t\t\tFirst Name: = " + this.firstName
-                + "\t\t\tLast Name: = " + this.lastName
-                + "\t\t\tAddress: = " + this.address
-                + "\t\t\tZIP: = " + this.zip
-                + "\t\t\tCity: = " + this.city
-                + "\t\t\tPhone Number: = " + this.phone
-                + "\t\t\tEmail: = " + this.email
-                + "\t\t\tBirthday: = " + this.birthday
-                + "\t\t\tAbout: = " + this.about;
+                + "\tFirst Name: = " + this.firstName
+                + "\tLast Name: = " + this.lastName
+                + "\tAddress: = " + this.address
+                + "\ttZIP: = " + this.zip
+                + "\tCity: = " + this.city
+                + "\tPhone Number: = " + this.phone
+                + "\tEmail: = " + this.email
+                + "\tBirthday: = " + this.birthday
+                + "\tAbout: = " + this.about;
     }
 }
