@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package services;
 
 import java.awt.Button;
 import java.awt.FileDialog;

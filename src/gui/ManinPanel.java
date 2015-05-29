@@ -5,8 +5,8 @@
  */
 package gui;
 
-import volunteers.Volunteer;
-import volunteers.XMLSAXVolunteerHandler;
+import services.Volunteer;
+import services.XMLSAXVolunteerHandler;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.io.IOException;
@@ -24,7 +24,7 @@ import org.xml.sax.SAXException;
  *
  * @author Andrei
  */
-public class NewGUI extends JFrame{
+public class ManinPanel extends JFrame{
     
     private static final long serialVersionUID = 1L;
     private TextPanel textPanel;
@@ -34,7 +34,7 @@ public class NewGUI extends JFrame{
 
 
 
-    public NewGUI() throws SAXException, IOException, ParserConfigurationException{
+    public ManinPanel() throws SAXException, IOException, ParserConfigurationException{
         super("Hello World"); // the name of the panel
         setLayout(new BorderLayout());
 

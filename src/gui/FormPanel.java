@@ -1,4 +1,6 @@
 package gui;
+import services.FileManager;
+import services.XmlDom;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -26,7 +28,7 @@ import javax.xml.xpath.XPathExpressionException;
 import org.xml.sax.SAXException;
 
 public class FormPanel  extends JPanel implements ActionListener{
-        private final gui.NewGUI userInterface;
+        private final gui.ManinPanel userInterface;
 	// define the elements
 	private final JLabel nameLabel;
 	private final JLabel occupationLabel;
@@ -51,7 +53,7 @@ public class FormPanel  extends JPanel implements ActionListener{
         private final JLabel lblSearch;
         private final JTextField searchString;
 
-	public FormPanel(gui.NewGUI userInterface) throws SAXException, IOException, ParserConfigurationException {
+	public FormPanel(gui.ManinPanel userInterface) throws SAXException, IOException, ParserConfigurationException {
             // configure the form panel dimension
             this.userInterface = userInterface;
             Dimension dim = getPreferredSize();
