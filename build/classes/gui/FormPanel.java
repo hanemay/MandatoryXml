@@ -28,7 +28,7 @@ import javax.xml.xpath.XPathExpressionException;
 import org.xml.sax.SAXException;
 
 public class FormPanel  extends JPanel implements ActionListener{
-        private final gui.NewGUI userInterface;
+        private final gui.ManinPanel userInterface;
 	// define the elements
 	private final JLabel nameLabel;
 	private final JLabel occupationLabel;
@@ -53,7 +53,7 @@ public class FormPanel  extends JPanel implements ActionListener{
         private final JLabel lblSearch;
         private final JTextField searchString;
 
-	public FormPanel(gui.NewGUI userInterface) throws SAXException, IOException, ParserConfigurationException {
+	public FormPanel(gui.ManinPanel userInterface) throws SAXException, IOException, ParserConfigurationException {
             // configure the form panel dimension
             this.userInterface = userInterface;
             Dimension dim = getPreferredSize();
@@ -87,31 +87,97 @@ public class FormPanel  extends JPanel implements ActionListener{
 	private void layoutComponents() {
             setLayout(new GridBagLayout());
             GridBagConstraints gc = new GridBagConstraints();
-            // ////////////First row ///////////////////
-            gc.gridy = 0;
-            gc.weightx = 1;
-            gc.weighty = 0.1;
-            gc.gridx = 0;
-            gc.fill = GridBagConstraints.NONE;
-            gc.anchor = GridBagConstraints.LINE_END;
-            gc.insets = new Insets(0, 0, 0, 5);
-            add(nameLabel, gc);
-            gc.gridx = 1;
-            gc.gridy = 0;
-            gc.anchor = GridBagConstraints.LINE_START;
-            gc.insets = new Insets(0, 0, 0, 0); 
-            add(nameField, gc);  
-            // ///////////Next row ///////////////////
-            gc.gridy++;
-            gc.weightx = 1;
-            gc.weighty = 2.0;
-            gc.gridx = 1;
-            gc.anchor = GridBagConstraints.FIRST_LINE_START;
-            gc.insets = new Insets(0, 0, 0, 5);
+           
+            
+//            // ////////////First row ///////////////////
+//            gc.gridy = 0;
+//
+//            gc.weightx = 1;
+//            gc.weighty = 0.1;
+//
+//            gc.gridx = 0;
+//            gc.fill = GridBagConstraints.NONE;
+//            gc.anchor = GridBagConstraints.LINE_END;
+//            gc.insets = new Insets(0, 0, 0, 5);
+//            add(new JLabel("Validate XML: "), gc);
+//
+//            gc.gridx = 1;
+//            gc.gridy = 0;
+//            gc.anchor = GridBagConstraints.LINE_START;
+//            gc.insets = new Insets(0, 0, 0, 0);
+//              
+//            add(btnDomValidate, gc); 
+//            
+//            // ///////////Second row ///////////////////
+//            gc.gridy++;
+//
+//            gc.weightx = 1;
+//            gc.weighty = 0.1;
+//
+//            gc.gridx = 0;
+//            gc.insets = new Insets(0, 0, 0, 5);
+//            gc.anchor = GridBagConstraints.LINE_END;
+//            add(new JLabel("XML to OBJ: "), gc);
+//
+//            gc.gridx = 1;
+//            gc.insets = new Insets(0, 0, 0, 0);
+//            gc.anchor = GridBagConstraints.LINE_START;
+//            add(btnXMLtoOBJ, gc);
+//
+//            // ///////////Next row ///////////////////
+//            gc.gridy++;
+//
+//            gc.weightx = 1;
+//            gc.weighty = 0.1;
+//
+//            gc.gridx = 0;
+//            gc.insets = new Insets(0, 0, 0, 5);
+//            gc.anchor = GridBagConstraints.FIRST_LINE_END;
+//            add(new JLabel("Get XML names by ID: "), gc);
+//
+//            gc.gridx = 1;
+//            gc.anchor = GridBagConstraints.FIRST_LINE_START;
+//            gc.insets = new Insets(0, 0, 0, 0);
+//            add(btnNameById, gc);
+//            
+//            // ///////////Next row ///////////////////
+//            gc.gridy++;
+//
+//            gc.weightx = 1;
+//            gc.weighty = 0.1;
+//
+//            gc.gridx = 0;
+//            gc.insets = new Insets(0, 0, 0, 5);
+//            gc.anchor = GridBagConstraints.FIRST_LINE_END;
+//            add(new JLabel("Get XML names: "), gc);
+//
+//            gc.gridx = 1;
+//            gc.anchor = GridBagConstraints.FIRST_LINE_START;
+//            gc.insets = new Insets(0, 0, 0, 0);
+//            add(btnNames, gc);
+//            
+//            // ///////////Next row ///////////////////
+//            gc.gridy++;
+//
+//            gc.weightx = 1;
+//            gc.weighty = 0.1;
+//
+//            gc.gridx = 0;
+//            gc.insets = new Insets(0, 0, 0, 5);
+//            gc.anchor = GridBagConstraints.FIRST_LINE_END;
+//            add(new JLabel("Get XML emails: "), gc);
+//
+//            gc.gridx = 1;
+//            gc.anchor = GridBagConstraints.FIRST_LINE_START;
+//            gc.insets = new Insets(0, 0, 0, 0);
+//            add(btnEmails, gc);
+//            
+//            
+            
             //i changed the layout here because im not familiar with gridbagview.
             setLayout(new FlowLayout());
-            add(okBtn);    
-            okBtn.addActionListener(this);
+//            add(okBtn);    
+//            okBtn.addActionListener(this);
             gc.insets = new Insets(0, 0, 0, 15);
             add(btnGetXML); 
             gc.insets = new Insets(0, 0, 25, 25);
