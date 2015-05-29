@@ -68,9 +68,9 @@ public class NewGUI extends JFrame{
         XMLSAXVolunteerHandler saxHandler = new XMLSAXVolunteerHandler();
         List<Volunteer> volList = saxHandler.readDataFromXML(filename);
         System.out.println("nr 0f volunteers:" + volList.size());     
-        for(Volunteer vol : volList) {
-                textPanel.appendText(vol.toString()+"\n");
-        }
+        volList.stream().forEach((vol) -> {
+            textPanel.appendText(vol.toString()+"\n");
+        });
     }         
 
     

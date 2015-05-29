@@ -27,6 +27,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -85,13 +86,24 @@ public class XmlDom {
         Document xmlDocument = builder.parse(file); 
         XPath xPath =  XPathFactory.newInstance().newXPath();
         String expression = searchString;
-        System.out.println(expression);
         NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(xmlDocument, XPathConstants.NODESET);
         for (int i = 0; i < nodeList.getLength(); i++) {
             results = nodeList.item(i).getFirstChild().getNodeValue(); 
         }
+        
+        Node node = (Node) xPath.compile(expression).evaluate(xmlDocument, XPathConstants.NODE);
+        if(null != node) {
+            nodeList = node.getChildNodes();
+            for (int i = 0;null!=nodeList && i < nodeList.getLength(); i++) {
+                Node nod = nodeList.item(i);
+                if(nod.getNodeType() == Node.ELEMENT_NODE)
+                    results += nodeList.item(i).getNodeName() + " : " + nod.getFirstChild().getNodeValue() + "\n";
+            }
+        }
+        
         return results;
     }
+    
     public boolean checkForSlash(String searchString){
         if(searchString.substring(0, 0).equals("/")){
             return true;
